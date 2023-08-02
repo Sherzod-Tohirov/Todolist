@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="wrapper__title-wrapper">
+          <h1 class="wrapper__title" title="todo list">Todo List</h1>
+        </div>
+        <form class="wrapper__form js-form" autocomplete="off">
+          <input class="wrapper__input js-input" type="text" name="query" placeholder="Add to do here..." aria-label="add to do here">
+          <input class="wrapper__input-time js-time" type="time" name="time">
+          <button class="wrapper__btn js-btn" type="submit" disabled> Add </button>
+        </form>
+        <ol class="wrapper__list"></ol>
+        <button class="wrapper__clear-btn js-clear">Clear list</button>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
