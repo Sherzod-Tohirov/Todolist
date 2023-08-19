@@ -91,6 +91,24 @@ body {
 	color: #3a47fd;
 }
 
+.wrapper__mic-btn {
+	position: absolute;	
+	top: 10px;
+	right: -270px;
+	padding: 0;	
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.wrapper__img * {
+  transition: fill 0.5s ease;
+}
+
+.wrapper__img--active * {
+  fill: red !important;
+}
+
 
 .wrapper__form {
 	position: relative;
@@ -243,4 +261,20 @@ body {
 	background-position: center;
 	background-size: contain;
 	content: "";
+}
+
+@media only screen and (max-width: 545px) {
+	.wrapper {
+		max-width: 340px;
+	}
+
+	.wrapper__mic-btn {
+		position: absolute;	
+		top: 10px;
+		right: -135px;
+		padding: 0;	
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
+	}
 }
