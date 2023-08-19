@@ -19,7 +19,6 @@ elInp.addEventListener('input', (evt) => {
 elInpTime.addEventListener('input', (evt) => {
   check(elInpTime, elInp, elBtn);
 });
-console.log(elList.childNodes.length);
 
 elForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
@@ -39,6 +38,17 @@ elList.addEventListener('click', (evt) => {
   }
   if (evt.target.classList.contains('item__btn')) {
     evt.target.parentElement.remove();
+  }
+
+  if (evt.target.classList.contains('item__edit-btn')) {
+    let todo = prompt('Enter to do: ');
+    let time = prompt('Enter time: ');
+    
+    if(todo && time) {
+      evt.target.offsetParent.childNodes[0].innerHTML = todo + `<time class="item__time"> ${time} </time>`;
+    }else {
+      console.log('Something went wrong !');
+    }
   }
 
   if (elList.childNodes.length == 0) {
@@ -110,6 +120,8 @@ function addToDo(inp, time) {
   let elp = document.createElement('p');
   let elLiBtn = document.createElement('button');
   let elTime = document.createElement('time');
+  let editBtn = document.createElement('button');
+  editBtn.classList.add('item__edit-btn');
   elLi.classList.add('wrapper__item');
   elp.classList.add('item__desc');
   elp.innerHTML = inp;
@@ -117,8 +129,8 @@ function addToDo(inp, time) {
   elTime.innerHTML = time;
   elp.appendChild(elTime);
   elLiBtn.classList.add('item__btn');
-  elLiBtn.innerHTML = "&times;";
   elLi.appendChild(elp);
+  elLi.appendChild(editBtn);
   elLi.appendChild(elLiBtn);
   elList.appendChild(elLi)
   elInp.value = '';
